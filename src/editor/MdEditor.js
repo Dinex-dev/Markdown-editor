@@ -8,7 +8,7 @@ export default function MdEditor() {
     function handleChange(e) {
         setMarkdown(e.target.value);
     }
-    const [isPreview, setIsPreview] = useState(false);
+    const [isPreview, setIsPreview] = useState('edit');
     function handlePreview(preview) {
         setIsPreview(preview);
     }
@@ -27,11 +27,15 @@ export default function MdEditor() {
             >
                 <ToggleView handlePreview={handlePreview} />
 
-                {isPreview ? (
-                    <Preview markdown={markdown} />
-                ) : (
-                    <EditArea markdown={markdown} handleChange={handleChange} />
-                )}
+                {isPreview === "preview" ?
+                    (<Preview markdown={markdown} />) :
+                    (isPreview === "edit" ? (
+                        <EditArea markdown={markdown} handleChange={handleChange} />) :
+                        (isPreview === "split" ? (<>
+                            <Preview markdown={markdown} />
+                            <EditArea markdown={markdown} handleChange={handleChange} />
+                        </>) :
+                            (<></>)))}
             </div>
         </div>
     );
