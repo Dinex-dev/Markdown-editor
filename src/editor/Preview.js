@@ -11,7 +11,7 @@ export default function Preview({ markdown }) {
             padding: "20px",
         }}>
             <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                {markdown}
+                {markdown.replace(/\n/g, "\n\n")}
             </ReactMarkdown>
         </div>
     );
