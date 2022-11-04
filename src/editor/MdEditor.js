@@ -4,9 +4,11 @@ import EditArea from "./EditArea";
 import ToggleView from "./ToggleView";
 
 export default function MdEditor() {
-    const [markdown, setMarkdown] = useState(`**Hello world!!!**`);
+    const localdata = localStorage.getItem("md");
+    const [markdown, setMarkdown] = useState(localdata ? localdata : `**Hello world!!!**`);
     function handleChange(e) {
         setMarkdown(e.target.value);
+        localStorage.setItem("md", e.target.value);
     }
     const [isPreview, setIsPreview] = useState('edit');
     function handlePreview(preview) {
