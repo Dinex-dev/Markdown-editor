@@ -14,28 +14,25 @@ export default function MdEditor() {
     function handlePreview(preview) {
         setIsPreview(preview);
     }
-
     return (
         <div
             style={{
                 margin: "20px",
-            }}
-        >
+            }}>
             <div
                 style={{
                     display: "flex",
                     flexDirection: "column",
-                }}
-            >
+                }}>
                 <ToggleView handlePreview={handlePreview} />
 
                 {isPreview === "preview" ?
                     (<Preview markdown={markdown} />) :
                     (isPreview === "edit" ? (
-                        <EditArea markdown={markdown} handleChange={handleChange} />) :
+                        <EditArea setMarkdown={setMarkdown} markdown={markdown} handleChange={handleChange} />) :
                         (isPreview === "split" ? (<>
                             <Preview markdown={markdown} />
-                            <EditArea markdown={markdown} handleChange={handleChange} />
+                            <EditArea setMarkdown={setMarkdown} markdown={markdown} handleChange={handleChange} />
                         </>) :
                             (<></>)))}
             </div>

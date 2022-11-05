@@ -63,7 +63,7 @@ export default function RMde() {
                 selectedTab={selectedTab}
                 onTabChange={setSelectedTab}
                 generateMarkdownPreview={(markdown) =>
-                    Promise.resolve(<ReactMarkdown source={markdown} />)
+                    Promise.resolve(<ReactMarkdown children={markdown} />)
                 }
                 loadSuggestions={loadSuggestions}
                 childProps={{
