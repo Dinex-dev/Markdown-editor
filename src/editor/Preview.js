@@ -12,7 +12,7 @@ export default function Preview({ markdown }) {
         tasklists: true,
         underline: true,
     });
-    const html = converter.makeHtml(markdown);
+    const html = converter.makeHtml(markdown.replace(/\n/g, "\n\n"));
     console.log(html)
     return (
         <div id="preview" style={{
@@ -22,10 +22,6 @@ export default function Preview({ markdown }) {
             padding: "20px",
         }}>
             <Markup content={html} />
-            {/* <ReactMarkdown
-                remarkPlugins={[remarkGfm]}
-                children={markdown.replace(/\n/g, "\n\n")}>
-            </ReactMarkdown> */}
         </div >
     );
 }

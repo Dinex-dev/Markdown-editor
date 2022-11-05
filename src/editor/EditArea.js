@@ -66,7 +66,7 @@ export default function EditArea({ markdown, handleChange, setMarkdown }) {
                 <button onClick={() => coverTextWith('*')}><i>I</i></button>
                 <button onClick={() => coverTextWith('`')}><code>Code</code></button>
                 <button onClick={() => handleHeading()}>H</button>
-                <button onClick={() => coverLine("- [x] ")}>Check</button>
+                {/* <button onClick={() => coverLine("- [x] ")}>Check</button> */}
                 <button onClick={() => coverLine("- ")}>List</button>
                 <button onClick={() => coverTextWith("~~")}><strike>S</strike></button>
                 {/* <button onClick={() => formatText('#')}>H</button>
