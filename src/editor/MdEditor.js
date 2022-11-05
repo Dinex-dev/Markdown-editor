@@ -10,7 +10,7 @@ export default function MdEditor() {
         setMarkdown(e.target.value);
         localStorage.setItem("md", e.target.value);
     }
-    const [isPreview, setIsPreview] = useState('edit');
+    const [isPreview, setIsPreview] = useState('split');
     function handlePreview(preview) {
         setIsPreview(preview);
     }

@@ -1,6 +1,6 @@
 import ReactMarkdown from "react-markdown";
 import remarkGfm from 'remark-gfm'
-
+import rehypeHighlight from 'rehype-highlight'
 
 export default function Preview({ markdown }) {
     return (
@@ -10,9 +10,10 @@ export default function Preview({ markdown }) {
             minHeight: "200px",
             padding: "20px",
         }}>
-            <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                {markdown.replace(/\n/g, "\n\n")}
+            <ReactMarkdown
+                remarkPlugins={[remarkGfm,]}
+                children={markdown.replace(/\n/g, "\n\n")}>
             </ReactMarkdown>
-        </div>
+        </div >
     );
 }
