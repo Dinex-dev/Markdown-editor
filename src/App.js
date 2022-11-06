@@ -1,10 +1,10 @@
 import './App.css';
-import MdEditor from './editor/MdEditor';
+import Editor from './editor/Editor';
 
 function App() {
   return (
-    <div className="editor">
-      <MdEditor />
+    <div>
+      <Editor />
     </div>
   );
 }
