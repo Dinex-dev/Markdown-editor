@@ -31,6 +31,9 @@ button:hover {
     display: grid;
     height: 100vh;
     grid-template-rows: 0.2fr 1.8fr;
+    grid-template-columns: 1fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
     grid-template-areas:
         "FormattingOptions FormattingOptions"
         "editArea preview";
@@ -46,6 +49,11 @@ button:hover {
     }
 }
 
+.preview {
+    resize: none;
+
+}
+
 
 .FormattingOptions {
     grid-area: FormattingOptions;
@@ -53,8 +61,9 @@ button:hover {
 
 .editArea {
     grid-area: editArea;
-    width: 100%;
-    resize: none;
+
+    resize: horizontal;
+    overflow: auto;
 }
 
 .preview {
