@@ -31,49 +31,76 @@ button:hover {
     display: grid;
     height: 100vh;
     grid-template-rows: 0.2fr 1.8fr;
-    gap: 0px 0px;
-    grid-auto-flow: row;
     grid-template-areas:
-        "navBar navBar"
+        "FormattingOptions FormattingOptions"
         "editArea preview";
 }
 
 @media (max-width: 768px) {
     .container {
-        grid-template-columns: 1fr;
-        grid-template-rows: 0.1fr 0.95fr 0.95fr;
+        grid-template-rows: 0.2fr 1.8fr 1.8fr;
         grid-template-areas:
-            "navBar"
+            "FormattingOptions"
             "preview"
             "editArea";
-
-    }
-
-    .editArea {
-        resize: none;
-
-    }
-
-    .preview {
-        resize: none;
-
     }
 }
 
-.navBar {
-    grid-area: navBar;
+
+.FormattingOptions {
+    grid-area: FormattingOptions;
 }
 
 .editArea {
     grid-area: editArea;
-
-    resize: horizontal;
-    overflow: auto;
+    width: 100%;
+    resize: none;
 }
 
 .preview {
     grid-area: preview;
-    overflow: auto;
-
-
+    width: 100%;
 }
+
+
+/* body {
+    margin: 10px;
+    height: 100%;
+}
+
+main {
+    display: grid;
+    border: 3px dotted red;
+    padding: 3px;
+    grid-gap: 3px;
+    
+    grid-template: 
+    "nav head" min-content
+    "nav main" 1fr
+        / min-content 1fr;
+}
+
+nav {
+    grid-area: nav;
+    border: 3px dotted blue;
+    overflow: auto;
+    resize: horizontal;
+    
+    min-width: 120px;
+    max-width: 50vw;
+}
+
+header {
+    grid-area: head;
+    border: 3px dotted orange;
+    overflow: auto;
+    resize: vertical;
+    
+    min-height: min-content;
+    max-height: 200px;
+}
+
+section {
+    grid-area: main;
+    border: 3px dotted gray;
+} */

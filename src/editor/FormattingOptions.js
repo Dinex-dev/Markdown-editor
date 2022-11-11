@@ -55,7 +55,7 @@ export default function FormattingOptions({ textAreaRef, setMarkdown, cursorPosi
             padding: '10px',
             border: "1px solid #c8ccd0",
             borderRadius: "5px 5px 0px 0px",
-        }}>
+        }} className="FormattingOptions">
             <div
                 style={{
                     fontFamily: "'Carter One', cursive",
