@@ -1,5 +1,4 @@
 import { useEffect, useRef } from "react";
-import '../App.css'
 
 export default function EditArea({ markdown, handleChange, setMarkdown, setTextAreaData }) {
     const cursorPosition = useRef(0);

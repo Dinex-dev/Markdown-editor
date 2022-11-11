@@ -1,3 +1,5 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBold, faUnderline, faItalic, faCode, faHeading, faList, faStrikethrough } from '@fortawesome/free-solid-svg-icons'
 
 function setText(newText, setMarkdown, textArea, end) {
     setMarkdown(newText);
@@ -61,17 +63,27 @@ export default function FormattingOptions({ textAreaRef, setMarkdown, cursorPosi
                 }}
             >MarkdownEditor</div>
             <div>
-                <button onClick={() => coverTextWith('**')}><strong>B</strong></button>
-                <button onClick={() => coverTextWith('__')}><u>U</u></button>
-                <button onClick={() => coverTextWith('*')}><i>I</i></button>
-                <button onClick={() => coverTextWith('`')}><code>Code</code></button>
-                <button onClick={() => handleHeading()}>H</button>
-                <button onClick={() => coverLine("- ")}>List</button>
-                <button onClick={() => coverTextWith("~~")}><strike>S</strike></button>
-                {/* <button onClick={() => formatText('#')}>H</button>
-                <button onClick={() => formatText('++')}>U</button>
-                <button onClick={() => formatText('-')}>List</button>
-                <button onClick={() => formatText('~~')}><strike>S</strike></button> */}
+                <button onClick={() => coverTextWith('**')}>
+                    <FontAwesomeIcon icon={faBold} />
+                </button>
+                <button onClick={() => coverTextWith('__')}>
+                    <FontAwesomeIcon icon={faUnderline} />
+                </button>
+                <button onClick={() => coverTextWith('*')}>
+                    <FontAwesomeIcon icon={faItalic} />
+                </button>
+                <button onClick={() => coverTextWith('`')}>
+                    <FontAwesomeIcon icon={faCode} />
+                </button>
+                <button onClick={() => handleHeading()}>
+                    <FontAwesomeIcon icon={faHeading} />
+                </button>
+                <button onClick={() => coverLine("- ")}>
+                    <FontAwesomeIcon icon={faList} />
+                </button>
+                <button onClick={() => coverTextWith("~~")}>
+                    <FontAwesomeIcon icon={faStrikethrough} />
+                </button>
             </div>
         </div>
     );

@@ -1,10 +1,9 @@
 import { useState } from "react";
 import EditArea from "./EditArea";
 import Preview from "./Preview";
-import './grid.css'
 import FormattingOptions from "./FormattingOptions";
 
-export default function Editor() {
+export default function DesktopEditor() {
     const localdata = localStorage.getItem("md");
     const [markdown, setMarkdown] = useState(localdata ? localdata : `**Hello world!!!**`);
     const [textAreaData, setTextAreaData] = useState({ textAreaRef: null, cursorPosition: null });
