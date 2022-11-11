@@ -19,7 +19,7 @@ export default function EditArea({ markdown, handleChange, setMarkdown, setTextA
             onChange={handleChange}
             value={markdown}
             style={{
-                resize: 'vertical',
+                resize: 'none',
                 border: "1px solid #c8ccd0",
                 width: "100%",
                 borderRadius: "0px 0px 5px 5px",

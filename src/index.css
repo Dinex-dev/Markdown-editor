@@ -30,7 +30,6 @@ button:hover {
 .container {
     display: grid;
     height: 100vh;
-    grid-template-columns: 1fr 1fr;
     grid-template-rows: 0.2fr 1.8fr;
     gap: 0px 0px;
     grid-auto-flow: row;
@@ -49,10 +48,16 @@ button:hover {
             "editArea";
 
     }
-}
 
-.preview {
-    grid-area: preview;
+    .editArea {
+        resize: none;
+
+    }
+
+    .preview {
+        resize: none;
+
+    }
 }
 
 .navBar {
@@ -61,4 +66,14 @@ button:hover {
 
 .editArea {
     grid-area: editArea;
+
+    resize: horizontal;
+    overflow: auto;
+}
+
+.preview {
+    grid-area: preview;
+    overflow: auto;
+
+
 }
